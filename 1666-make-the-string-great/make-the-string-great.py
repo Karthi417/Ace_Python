@@ -1,5 +1,11 @@
-from functools import reduce
-
 class Solution:
     def makeGood(self, s: str) -> str:
-        return reduce(lambda x, y: x[:-1] if x and x[-1] != y and x[-1].lower() == y.lower() else x + y, s, "")
+        q = []
+        i = 0
+        while i < len(s):
+            if q and q[-1] != s[i] and q[-1].lower() == s[i].lower():
+                q.pop()
+            else:
+                q.append(s[i])
+            i += 1
+        return "".join(q)
