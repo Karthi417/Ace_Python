@@ -7,7 +7,3 @@ class Solution:
                 return [hasht[diff],i]
             hasht[n]=i
         return 
-            
-
-        
-        
